@@ -1,0 +1,147 @@
+{
+  "architecture": "shared_resnet_fpn_mask_rcnn_ring_roi_classifier",
+  "backbone": "resnet34",
+  "anchor_profile": "thin_crack",
+  "imgsz": 640,
+  "tile_overlap": 160,
+  "tile_merge_confidence": 0.05,
+  "tile_merge_ios": 0.2,
+  "tile_eval_batch": 2,
+  "preprocessing": "native_overlapping_tiles_for_defect_bridge",
+  "ring_view": "full_image_letterbox",
+  "augmentation": "flip_photometric_v1",
+  "cache_version": "instance_v5_letterbox_aug_polygon_restore",
+  "data_repairs": {
+    "mokume_polygon_restore": {
+      "status": "applied",
+      "source": "/home/jzf/dataset-clean/wood-multitask-final/data_processed/bridge_audit/mokume_polygon_restore.json",
+      "sha256": "4949b27b2f1a6a545950dbaae87ae9de71af2ad10329fa48b3b7d1d55925fd61",
+      "entry_count": 168,
+      "matched": 167,
+      "exact_class_matches": 128,
+      "relaxed_class_matches": 35,
+      "bbox_only_matches": 4,
+      "unmatched": 1,
+      "unmatched_entries": [
+        {
+          "sample_id": "mokume:CN09:D",
+          "shape_index": 0,
+          "source_class": "other|outer_damage|O01|clear|1|0",
+          "bbox": [
+            0.5000000000000505,
+            128.61111111111111,
+            1078.021472392638,
+            1855.3643490115883
+          ]
+        }
+      ]
+    }
+  },
+  "epochs": 100,
+  "steps_per_epoch": 256,
+  "batch_sizes": {
+    "ring": 4,
+    "defect": 2,
+    "classification": 16,
+    "bridge": 2
+  },
+  "task_ratios": "ring:2,defect:5,classification:3,bridge:2",
+  "score_weights": {
+    "ring": 1.0,
+    "defect_box": 1.0,
+    "defect_mask": 1.0,
+    "classification": 1.0,
+    "bridge_ring": 0.5,
+    "bridge_box": 0.5,
+    "bridge_mask": 0.5
+  },
+  "lr": 0.0002,
+  "weight_decay": 0.0001,
+  "workers": 1,
+  "balanced_defect": true,
+  "balanced_bridge": true,
+  "eval_interval": 5,
+  "device": "cuda:0",
+  "seed": 42,
+  "train_records": {
+    "ring": 660,
+    "defect": 120000,
+    "classification": 20975,
+    "bridge": 805
+  },
+  "val_records": {
+    "ring": 144,
+    "defect": 2000,
+    "classification": 4536,
+    "bridge": 58
+  },
+  "test_records": {
+    "ring": 132,
+    "defect": 4000,
+    "classification": 7722,
+    "bridge": 69
+  },
+  "tile_records": {
+    "defect": 120000,
+    "bridge": 805
+  },
+  "initialization": {
+    "kind": "instance_model",
+    "source": "/home/jzf/dataset-clean/wood-multitask-final/outputs/stage3_multitask/runs/resnet34_instance_singleproc_final100/best.pt",
+    "source_epoch": 100,
+    "transferred_tensors": 278,
+    "skipped_shape_mismatch": [
+      {
+        "name": "detector.rpn.head.cls_logits.weight",
+        "source_shape": [
+          3,
+          256,
+          1,
+          1
+        ],
+        "target_shape": [
+          7,
+          256,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "detector.rpn.head.cls_logits.bias",
+        "source_shape": [
+          3
+        ],
+        "target_shape": [
+          7
+        ]
+      },
+      {
+        "name": "detector.rpn.head.bbox_pred.weight",
+        "source_shape": [
+          12,
+          256,
+          1,
+          1
+        ],
+        "target_shape": [
+          28,
+          256,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "detector.rpn.head.bbox_pred.bias",
+        "source_shape": [
+          12
+        ],
+        "target_shape": [
+          28
+        ]
+      }
+    ],
+    "skipped_missing": [],
+    "missing_after_partial_load": 4,
+    "unexpected_after_partial_load": []
+  }
+}

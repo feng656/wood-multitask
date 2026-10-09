@@ -1,0 +1,56 @@
+{
+  "project_root": "/home/jzf/dataset-clean/wood-multitask-final",
+  "output_dir": "/home/jzf/dataset-clean/wood-multitask-final/outputs/stage3_multitask/runs/resnet34_instance_singleproc_final100",
+  "architecture": "shared_resnet_fpn_mask_rcnn_ring_roi_classifier",
+  "backbone": "resnet34",
+  "anchor_profile": "default",
+  "imgsz": 320,
+  "epochs": 100,
+  "steps_per_epoch": 512,
+  "batch_sizes": {
+    "ring": 16,
+    "defect": 4,
+    "classification": 64,
+    "bridge": 2
+  },
+  "task_ratios": "ring:1,defect:6,classification:4,bridge:1",
+  "score_weights": {
+    "ring": 1.0,
+    "defect_box": 1.0,
+    "defect_mask": 1.0,
+    "classification": 1.0,
+    "bridge_ring": 0.5,
+    "bridge_box": 0.5,
+    "bridge_mask": 0.5
+  },
+  "lr": 0.0002,
+  "weight_decay": 0.0001,
+  "workers": 0,
+  "balanced_defect": false,
+  "balanced_bridge": false,
+  "eval_interval": 10,
+  "device": "cuda:0",
+  "seed": 42,
+  "max_train_samples_per_task": 0,
+  "max_val_samples_per_task": 0,
+  "train_records": {
+    "ring": 660,
+    "defect": 10000,
+    "classification": 20975,
+    "bridge": 194
+  },
+  "val_records": {
+    "ring": 144,
+    "defect": 2000,
+    "classification": 4536,
+    "bridge": 58
+  },
+  "test_records": {
+    "ring": 132,
+    "defect": 4000,
+    "classification": 7722,
+    "bridge": 69
+  },
+  "initialization": null,
+  "cache_audit": {}
+}

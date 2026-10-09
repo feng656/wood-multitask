@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 模型权重与打包产物
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.zip
+*.tar
+*.tar.gz
+
+# 大数据目录
+data_processed/
+logs/
+outputs/
+runs/
+
+# 系统文件
+.DS_Store
+Thumbs.db

@@ -1,0 +1,102 @@
+{
+  "output": "/home/jzf/dataset-clean/wood-multitask-final/outputs/defect_baseline/tile_learnability_yolo",
+  "seed": 42,
+  "holdout_sources": [
+    "F04a.png",
+    "F07a.png",
+    "F07b.png",
+    "F07c.png",
+    "L02b.png",
+    "L02e.png",
+    "L09a.png",
+    "L09b.png"
+  ],
+  "train_tile_sources": [
+    "F02a.png",
+    "F02b.png",
+    "F02c.png",
+    "F02d.png",
+    "F02e.png",
+    "F04b.png",
+    "F04c.png",
+    "F04d.png",
+    "F04e.png",
+    "F07d.png",
+    "F07e.png",
+    "F08a.png",
+    "F08b.png",
+    "F08c.png",
+    "F08d.png",
+    "F08e.png",
+    "F09a.png",
+    "F09b.png",
+    "F09c.png",
+    "F09d.png",
+    "F09e.png",
+    "F10a.png",
+    "F10b.png",
+    "F10e.png",
+    "L02a.png",
+    "L02c.png",
+    "L02d.png",
+    "L09c.png",
+    "L09d.png",
+    "L09e.png"
+  ],
+  "val_sources": [
+    "L07a.png",
+    "L07b.png",
+    "L07c.png",
+    "L07d.png",
+    "L07e.png",
+    "L08a.png",
+    "L08b.png",
+    "L08c.png",
+    "L08d.png",
+    "L08e.png",
+    "L11b.png"
+  ],
+  "ext_test_sources": [
+    "F03a.png",
+    "F03b.png",
+    "F03c.png",
+    "F03d.png",
+    "F03e.png",
+    "L03a.png",
+    "L03b.png",
+    "L03c.png",
+    "L03d.png",
+    "L03e.png",
+    "L04a.png",
+    "L04b.png",
+    "L04c.png",
+    "L04d.png",
+    "L04e.png"
+  ],
+  "splits": {
+    "train": {
+      "images": 2109,
+      "knot": 2763,
+      "crack": 6021,
+      "empty": 382
+    },
+    "val": {
+      "images": 203,
+      "knot": 0,
+      "crack": 1706,
+      "empty": 0
+    },
+    "test": {
+      "images": 32,
+      "knot": 0,
+      "crack": 71,
+      "empty": 0
+    },
+    "ext_test": {
+      "images": 191,
+      "knot": 0,
+      "crack": 1241,
+      "empty": 0
+    }
+  }
+}

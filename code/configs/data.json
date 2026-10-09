@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "workspace_root": "../",
+  "dataset_root": "../",
+  "output_dir": "data_processed/manifests",
+  "defect_taxonomy": "configs/defect_taxonomy.json",
+  "seed": 20260729,
+  "main_defect_categories": ["knot", "crack"],
+  "datasets": {
+    "urudendro": "UnuDendro系列/UruDendro",
+    "urudendro2": "UnuDendro系列/UruDendro2/UruDendro2",
+    "urudendro4": "UnuDendro系列/UruDendro4/UruDendro4",
+    "mokume": "Mokume/MokumeDataset/MokumeDataset",
+    "vsb": "vsb-final",
+    "vnwoodknot": "VNWoodKnot",
+    "indiana": "Indiana Hardwood/data",
+    "oulu": "OULU-DET/I2GF-Net-Data/Oulu-Wood",
+    "wvtec_wood": "WVTec Wood/wood/wood",
+    "coating": "涂层缺陷",
+    "miscs_code": "MiSCS/INBD-master/INBD-master"
+  },
+  "splits": {
+    "ring_r1_train_val": {"train": 0.8, "val": 0.2},
+    "bridge": {"train": 0.6, "val": 0.2, "test": 0.2},
+    "mokume": {"train": 0.7, "val": 0.15, "test": 0.15},
+    "ring_r2_folds": 5
+  },
+  "roles": {
+    "main": ["urudendro", "urudendro2", "mokume", "vsb"],
+    "external_test": ["urudendro4", "vnwoodknot", "indiana", "oulu"],
+    "auxiliary_only": ["wvtec_wood", "coating"],
+    "unavailable": ["miscs_code"]
+  },
+  "policy_notes": {
+    "vsb": "Reuse the immutable 16,000-image vsb-final split and its knot/crack-only supervision.",
+    "non_target_defects": "Retain as ignored/audit annotations; never reinterpret as verified normal.",
+    "coating": "All 45 derivatives of one original image share one group and are excluded from primary training.",
+    "miscs_code": "Repository code is present but the MiSCS image dataset has not been downloaded."
+  }
+}

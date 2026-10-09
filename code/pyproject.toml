@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wood-multitask-data"
+version = "0.1.0"
+description = "Leakage-safe data engineering for annual-ring and wood-defect tasks"
+requires-python = ">=3.10"
+dependencies = [
+  "Pillow>=10",
+  "numpy>=1.26",
+  "shapely>=2.0",
+  "opencv-python-headless>=4.10",
+]
+
+[project.optional-dependencies]
+report = ["python-docx>=1.1", "openpyxl>=3.1"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,377 @@
+{
+  "checkpoint": "D:\\教务处实习\\wood_preproject\\outputs\\classification_baseline\\runs\\resnet34_balanced\\best.pt",
+  "checkpoint_epoch": 26,
+  "split": "external_test",
+  "class_names": [
+    "crack",
+    "knot",
+    "normal"
+  ],
+  "overall": {
+    "samples": 3055,
+    "accuracy": 0.4291325695581015,
+    "balanced_accuracy_all_contract_classes": 0.3319706200011437,
+    "macro_f1_all_contract_classes": 0.275376736418151,
+    "balanced_accuracy_supported_classes": 0.3319706200011437,
+    "macro_f1_supported_classes": 0.275376736418151,
+    "per_class": {
+      "crack": {
+        "support": 235,
+        "predicted": 1572,
+        "precision": 0.06361323155216285,
+        "recall": 0.425531914893617,
+        "f1": 0.11068068622025455
+      },
+      "knot": {
+        "support": 2217,
+        "predicted": 1415,
+        "precision": 0.841696113074205,
+        "recall": 0.5372124492557511,
+        "f1": 0.6558370044052865
+      },
+      "normal": {
+        "support": 603,
+        "predicted": 68,
+        "precision": 0.29411764705882354,
+        "recall": 0.03316749585406302,
+        "f1": 0.05961251862891208
+      }
+    },
+    "confusion_matrix": [
+      [
+        100,
+        129,
+        6
+      ],
+      [
+        984,
+        1191,
+        42
+      ],
+      [
+        488,
+        95,
+        20
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "crack",
+      "knot",
+      "normal"
+    ]
+  },
+  "per_dataset": {
+    "oulu": {
+      "samples": 1534,
+      "accuracy": 0.6375488917861799,
+      "balanced_accuracy_all_contract_classes": 0.386548542422733,
+      "macro_f1_all_contract_classes": 0.3570754100394586,
+      "balanced_accuracy_supported_classes": 0.386548542422733,
+      "macro_f1_supported_classes": 0.3570754100394586,
+      "per_class": {
+        "crack": {
+          "support": 235,
+          "predicted": 422,
+          "precision": 0.23696682464454977,
+          "recall": 0.425531914893617,
+          "f1": 0.30441400304414007
+        },
+        "knot": {
+          "support": 1196,
+          "predicted": 1094,
+          "precision": 0.8025594149908593,
+          "recall": 0.7341137123745819,
+          "f1": 0.7668122270742357
+        },
+        "normal": {
+          "support": 103,
+          "predicted": 18,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          100,
+          129,
+          6
+        ],
+        [
+          306,
+          878,
+          12
+        ],
+        [
+          16,
+          87,
+          0
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "crack",
+        "knot",
+        "normal"
+      ]
+    },
+    "vnwoodknot": {
+      "samples": 1521,
+      "accuracy": 0.21893491124260356,
+      "balanced_accuracy_all_contract_classes": 0.11552073130917401,
+      "macro_f1_all_contract_classes": 0.17973174366616987,
+      "balanced_accuracy_supported_classes": 0.173281096963761,
+      "macro_f1_supported_classes": 0.2695976154992548,
+      "per_class": {
+        "crack": {
+          "support": 0,
+          "predicted": 1150,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "knot": {
+          "support": 1021,
+          "predicted": 321,
+          "precision": 0.9750778816199377,
+          "recall": 0.30656219392752204,
+          "f1": 0.46646795827123694
+        },
+        "normal": {
+          "support": 500,
+          "predicted": 50,
+          "precision": 0.4,
+          "recall": 0.04,
+          "f1": 0.07272727272727272
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          678,
+          313,
+          30
+        ],
+        [
+          472,
+          8,
+          20
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "crack",
+        "knot",
+        "normal"
+      ]
+    }
+  },
+  "source_class_audit": [
+    {
+      "source_dataset": "oulu",
+      "source_class": "decayed_knot",
+      "true_classes": {
+        "knot": 24
+      },
+      "samples": 24,
+      "correct": 17,
+      "accuracy": 0.7083333333333334,
+      "error_predictions": {
+        "crack": 7
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "dry_knot",
+      "true_classes": {
+        "knot": 304
+      },
+      "samples": 304,
+      "correct": 230,
+      "accuracy": 0.756578947368421,
+      "error_predictions": {
+        "crack": 74
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "edge_knot",
+      "true_classes": {
+        "knot": 97
+      },
+      "samples": 97,
+      "correct": 68,
+      "accuracy": 0.7010309278350515,
+      "error_predictions": {
+        "crack": 29
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "encased_knot",
+      "true_classes": {
+        "knot": 70
+      },
+      "samples": 70,
+      "correct": 48,
+      "accuracy": 0.6857142857142857,
+      "error_predictions": {
+        "crack": 22
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "horn_knot",
+      "true_classes": {
+        "knot": 40
+      },
+      "samples": 40,
+      "correct": 15,
+      "accuracy": 0.375,
+      "error_predictions": {
+        "crack": 25
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "knot_hole",
+      "true_classes": {
+        "knot": 32
+      },
+      "samples": 32,
+      "correct": 25,
+      "accuracy": 0.78125,
+      "error_predictions": {
+        "crack": 7
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "leaf_knot",
+      "true_classes": {
+        "knot": 58
+      },
+      "samples": 58,
+      "correct": 28,
+      "accuracy": 0.4827586206896552,
+      "error_predictions": {
+        "crack": 23,
+        "normal": 7
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "moustache_knot",
+      "true_classes": {
+        "knot": 4
+      },
+      "samples": 4,
+      "correct": 3,
+      "accuracy": 0.75,
+      "error_predictions": {
+        "crack": 1
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "small_knot",
+      "true_classes": {
+        "knot": 329
+      },
+      "samples": 329,
+      "correct": 262,
+      "accuracy": 0.7963525835866262,
+      "error_predictions": {
+        "crack": 65,
+        "normal": 2
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "sound_knot",
+      "true_classes": {
+        "knot": 238
+      },
+      "samples": 238,
+      "correct": 182,
+      "accuracy": 0.7647058823529411,
+      "error_predictions": {
+        "crack": 53,
+        "normal": 3
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "split",
+      "true_classes": {
+        "crack": 235
+      },
+      "samples": 235,
+      "correct": 100,
+      "accuracy": 0.425531914893617,
+      "error_predictions": {
+        "knot": 129,
+        "normal": 6
+      },
+      "top_wrong_prediction": "knot"
+    },
+    {
+      "source_dataset": "oulu",
+      "source_class": "verified_negative",
+      "true_classes": {
+        "normal": 103
+      },
+      "samples": 103,
+      "correct": 0,
+      "accuracy": 0.0,
+      "error_predictions": {
+        "knot": 87,
+        "crack": 16
+      },
+      "top_wrong_prediction": "knot"
+    },
+    {
+      "source_dataset": "vnwoodknot",
+      "source_class": "folder_class",
+      "true_classes": {
+        "knot": 1021
+      },
+      "samples": 1021,
+      "correct": 313,
+      "accuracy": 0.30656219392752204,
+      "error_predictions": {
+        "normal": 30,
+        "crack": 678
+      },
+      "top_wrong_prediction": "crack"
+    },
+    {
+      "source_dataset": "vnwoodknot",
+      "source_class": "verified_negative",
+      "true_classes": {
+        "normal": 500
+      },
+      "samples": 500,
+      "correct": 20,
+      "accuracy": 0.04,
+      "error_predictions": {
+        "crack": 472,
+        "knot": 8
+      },
+      "top_wrong_prediction": "crack"
+    }
+  ],
+  "error_count": 1744
+}

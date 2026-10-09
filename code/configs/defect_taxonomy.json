@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "primary_categories": ["normal", "knot", "crack"],
+  "instance_category_ids": {"knot": 1, "crack": 2},
+  "knot_subtypes": ["sound_or_live", "dead_or_dry", "cracked", "missing", "unknown"],
+  "datasets": {
+    "vsb": {
+      "Live_Knot": {"category": "knot", "subtype": "sound_or_live", "attributes": [], "train_action": "keep"},
+      "Dead_Knot": {"category": "knot", "subtype": "dead_or_dry", "attributes": [], "train_action": "keep"},
+      "Knot_missing": {"category": "knot", "subtype": "missing", "attributes": [], "train_action": "keep"},
+      "knot_with_crack": {"category": "knot", "subtype": "cracked", "attributes": [], "train_action": "keep", "semantic_note": "knot only; never a crack target"},
+      "Crack": {"category": "crack", "subtype": "standalone", "attributes": [], "train_action": "keep"},
+      "Blue_Stain": {"category": null, "subtype": "", "attributes": [], "train_action": "exclude"},
+      "Marrow": {"category": null, "subtype": "", "attributes": [], "train_action": "exclude"},
+      "Quartzity": {"category": null, "subtype": "", "attributes": [], "train_action": "exclude"},
+      "overgrown": {"category": null, "subtype": "", "attributes": [], "train_action": "exclude"},
+      "resin": {"category": null, "subtype": "", "attributes": [], "train_action": "exclude"}
+    },
+    "vnwoodknot": {
+      "0": {"category": "normal", "subtype": "", "attributes": [], "train_action": "keep"},
+      "1": {"category": "knot", "subtype": "sound_or_live", "attributes": [], "train_action": "keep"},
+      "2": {"category": "knot", "subtype": "dead_or_dry", "attributes": [], "train_action": "keep"}
+    },
+    "oulu": {
+      "sound_knot": {"category": "knot", "subtype": "sound_or_live", "attributes": [], "train_action": "keep"},
+      "dry_knot": {"category": "knot", "subtype": "dead_or_dry", "attributes": [], "train_action": "keep"},
+      "encased_knot": {"category": "knot", "subtype": "dead_or_dry", "attributes": ["encased"], "train_action": "keep"},
+      "decayed_knot": {"category": "knot", "subtype": "dead_or_dry", "attributes": ["decayed"], "train_action": "keep"},
+      "knot_hole": {"category": "knot", "subtype": "missing", "attributes": [], "train_action": "keep"},
+      "small_knot": {"category": "knot", "subtype": "unknown", "attributes": ["small"], "train_action": "keep"},
+      "edge_knot": {"category": "knot", "subtype": "unknown", "attributes": ["edge"], "train_action": "keep"},
+      "leaf_knot": {"category": "knot", "subtype": "unknown", "attributes": ["leaf"], "train_action": "keep"},
+      "horn_knot": {"category": "knot", "subtype": "unknown", "attributes": ["horn"], "train_action": "keep"},
+      "moustache_knot": {"category": "knot", "subtype": "unknown", "attributes": ["moustache"], "train_action": "keep"},
+      "split": {"category": "crack", "subtype": "standalone", "attributes": [], "train_action": "keep"},
+      "mould": {"category": null, "subtype": "", "attributes": ["mould"], "train_action": "ignore"},
+      "resin_pocket": {"category": null, "subtype": "", "attributes": ["resin_pocket"], "train_action": "ignore"},
+      "resin": {"category": null, "subtype": "", "attributes": ["resin"], "train_action": "ignore"},
+      "core_stripe": {"category": null, "subtype": "", "attributes": ["core_stripe"], "train_action": "ignore"},
+      "wane": {"category": null, "subtype": "", "attributes": ["wane"], "train_action": "ignore"},
+      "bark_pocket": {"category": null, "subtype": "", "attributes": ["bark_pocket"], "train_action": "ignore"},
+      "wave": {"category": null, "subtype": "", "attributes": ["wave"], "train_action": "ignore"},
+      "UNKNOWN": {"category": null, "subtype": "", "attributes": ["unknown_source_class"], "train_action": "ignore"}
+    },
+    "bridge": {
+      "knot": {"category": "knot", "train_action": "keep"},
+      "crack": {"category": "crack", "train_action": "keep"},
+      "discoloration": {"category": null, "train_action": "ignore"},
+      "resin": {"category": null, "train_action": "ignore"},
+      "other": {"category": null, "train_action": "ignore"}
+    }
+  }
+}

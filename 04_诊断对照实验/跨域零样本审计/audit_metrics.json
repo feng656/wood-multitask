@@ -1,0 +1,98 @@
+{
+  "checkpoint": "D:\\\u6559\u52a1\u5904\u5b9e\u4e60\\wood_preproject\\outputs\\defect_baseline\\runs\\yolov8s_vsb_box-3\\weights\\best.pt",
+  "imgsz": 640,
+  "tile_size": 640,
+  "overlap": 160,
+  "domains": {
+    "full:mokume": {
+      "images": 54,
+      "gt_instances": {
+        "knot": 19,
+        "crack": 7
+      },
+      "knot": {
+        "predictions": 89,
+        "mAP50_95": 0.0,
+        "AP50": 0.0,
+        "AP75": 0.0,
+        "Recall50": 0.0,
+        "Recall75": 0.0,
+        "Precision50_at_conf_floor": 0.0
+      },
+      "crack": {
+        "predictions": 176,
+        "mAP50_95": 0.017903299763938653,
+        "AP50": 0.0423042304230423,
+        "AP75": 0.0,
+        "Recall50": 0.42857142857142855,
+        "Recall75": 0.0,
+        "Precision50_at_conf_floor": 0.017045454545454544
+      },
+      "gt_box_size_px": {
+        "knot": {
+          "count": 19,
+          "width_min": 56.19469026548677,
+          "width_median": 355.8823529411766,
+          "width_max": 3105.66037735849,
+          "height_min": 70.55555555555566,
+          "height_median": 737.6623376623379,
+          "height_max": 1935.849056603773,
+          "width_at_640_median": 60.06453214197073,
+          "height_at_640_median": 124.3360274174075,
+          "under_4px_after_full_resize": 0
+        },
+        "crack": {
+          "count": 7,
+          "width_min": 78.82352941176487,
+          "width_median": 459.090909090909,
+          "width_max": 1437.735849056604,
+          "height_min": 271.67647058823525,
+          "height_median": 1074.1176470588236,
+          "height_max": 2506.6179275270183,
+          "width_at_640_median": 76.97620692118987,
+          "height_at_640_median": 162.66213136397712,
+          "under_4px_after_full_resize": 0
+        }
+      }
+    },
+    "full:urudendro": {
+      "images": 15,
+      "gt_instances": {
+        "knot": 0,
+        "crack": 185
+      },
+      "knot": {
+        "predictions": 626,
+        "mAP50_95": 0.0,
+        "AP50": 0.0,
+        "AP75": 0.0,
+        "Recall50": 0.0,
+        "Recall75": 0.0,
+        "Precision50_at_conf_floor": 0.0
+      },
+      "crack": {
+        "predictions": 1395,
+        "mAP50_95": 0.0008543628296374624,
+        "AP50": 0.00351988489938882,
+        "AP75": 0.0004992095848240286,
+        "Recall50": 0.0918918918918919,
+        "Recall75": 0.021621621621621623,
+        "Precision50_at_conf_floor": 0.012186379928315413
+      },
+      "gt_box_size_px": {
+        "crack": {
+          "count": 185,
+          "width_min": 9.740259740259717,
+          "width_median": 79.41176470588243,
+          "width_max": 781.4159292035396,
+          "height_min": 11.200000000000045,
+          "height_median": 90.80459770114942,
+          "height_max": 852.7272727272727,
+          "width_at_640_median": 20.194874430937663,
+          "height_at_640_median": 23.09384164222874,
+          "under_4px_after_full_resize": 10
+        }
+      }
+    }
+  }
+}

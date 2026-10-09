@@ -1,0 +1,99 @@
+{
+  "project_root": "/home/jzf/dataset-clean/wood-multitask-final",
+  "output_dir": "/home/jzf/dataset-clean/wood-multitask-final/outputs/stage3_multitask/runs/resnet34_instance_nobridge_v2",
+  "architecture": "shared_resnet_fpn_mask_rcnn_ring_roi_classifier",
+  "backbone": "resnet34",
+  "anchor_profile": "thin_crack",
+  "imgsz": 640,
+  "preprocessing": "letterbox_v1",
+  "augmentation": "flip_photometric_v1",
+  "cache_version": "instance_v5_letterbox_aug_polygon_restore",
+  "data_repairs": {
+    "mokume_polygon_restore": {
+      "status": "applied",
+      "source": "/home/jzf/dataset-clean/wood-multitask-final/data_processed/bridge_audit/mokume_polygon_restore.json",
+      "sha256": "4949b27b2f1a6a545950dbaae87ae9de71af2ad10329fa48b3b7d1d55925fd61",
+      "entry_count": 168,
+      "matched": 167,
+      "exact_class_matches": 128,
+      "relaxed_class_matches": 35,
+      "bbox_only_matches": 4,
+      "unmatched": 1,
+      "unmatched_entries": [
+        {
+          "sample_id": "mokume:CN09:D",
+          "shape_index": 0,
+          "source_class": "other|outer_damage|O01|clear|1|0",
+          "bbox": [
+            0.5000000000000505,
+            128.61111111111111,
+            1078.021472392638,
+            1855.3643490115883
+          ]
+        }
+      ]
+    }
+  },
+  "epochs": 100,
+  "steps_per_epoch": 512,
+  "batch_sizes": {
+    "ring": 4,
+    "defect": 2,
+    "classification": 32
+  },
+  "task_ratios": "ring:2,defect:5,classification:4",
+  "score_weights": {
+    "ring": 1.0,
+    "defect_box": 1.0,
+    "defect_mask": 1.0,
+    "classification": 1.0,
+    "bridge_ring": 0.0,
+    "bridge_box": 0.0,
+    "bridge_mask": 0.0
+  },
+  "lr": 0.0002,
+  "weight_decay": 0.0001,
+  "workers": 1,
+  "balanced_defect": false,
+  "balanced_bridge": false,
+  "exclude_crack_defect": true,
+  "backbone_lr_scale": 0.5,
+  "score_ema": 0.5,
+  "box_roi_output": 14,
+  "eval_interval": 5,
+  "device": "cuda:1",
+  "seed": 42,
+  "max_train_samples_per_task": 0,
+  "max_val_samples_per_task": 0,
+  "train_records": {
+    "ring": 660,
+    "defect": 10000,
+    "classification": 20975
+  },
+  "val_records": {
+    "ring": 144,
+    "defect": 2000,
+    "classification": 4536
+  },
+  "test_records": {
+    "ring": 132,
+    "defect": 4000,
+    "classification": 7722
+  },
+  "initialization": {
+    "kind": "classification_encoder",
+    "source": "/home/jzf/dataset-clean/wood-multitask-final/outputs/classification_baseline/runs/resnet34_balanced/best.pt",
+    "source_epoch": 26,
+    "source_model": "resnet34",
+    "source_imgsz": 224,
+    "source_class_names": [
+      "crack",
+      "knot",
+      "normal"
+    ],
+    "transferred_tensors": 216,
+    "missing_after_partial_load": 66,
+    "unexpected_after_partial_load": []
+  },
+  "cache_audit": {}
+}

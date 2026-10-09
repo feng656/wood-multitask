@@ -1,0 +1,42 @@
+============================================================
+ Shared MT NO Bridge v2（resnet34_instance_nobridge_v2）代码快照
+ 复制时间：2026-08-18 · 来源：E:\dataset-clean\wood-multitask-final
+============================================================
+
+目录结构
+--------
+scripts\
+  train_stage3_instance_multitask.py   # 整图训练主脚本（v2 全部改动在此）
+  run_stage3_nobridge_v2.sh            # v2 启动脚本（本次实验实际使用）
+  run_stage3_nobridge.sh               # v1 启动脚本（对照参考）
+src_wood_data\                         # wood_data 包（含模型定义）
+  instance_multitask.py                # SharedInstanceMultitaskModel（v2 改动：box_roi_output 参数）
+
+v2 相对 v1 的六项改动（与 config.json 对应关系）
+--------
+1. --no-bridge：bridge 数据完全退出训练（v1 已有，v2 保留）
+2. --exclude-crack-defect：缺陷任务剔除 crack 标注，只分 knot/背景
+   （config: exclude_crack_defect=true；分类任务保留 crack 类）
+3. 512 steps/epoch + 任务比例 ring:2/defect:5/cls:4 + cls batch 32
+   （config: steps_per_epoch/batch_sizes/task_ratios）
+4. 分层学习率：backbone ×0.5 / FPN ×0.75 / heads ×1.0
+   （config: backbone_lr_scale=0.5，见 main() 的 optimizer 分组）
+5. --score-ema 0.5：best.pt 按 EMA 平滑综合分选择，避免分类噪声峰
+   （config: score_ema=0.5，history 记录 score_ema 字段）
+6. --box-roi-output 14：box ROIAlign 7→14 提升高 IoU 框回归精度
+   （config: box_roi_output=14；instance_multitask.py 构造参数）
+另外：去掉了 v1 的 balanced-defect（83% VSB 图含 knot，无需平衡）。
+
+实验结果（test 口径，best.pt@ep95）
+--------
+ring Dice 0.5172 / MAE 0.1907 · box mAP50-95 0.3791（knot-only）
+mAP50 0.8941 · mask mAP50-95 0.4403 · cls Macro-F1 0.9621
+基线：Mokume ring Dice 0.3331 · YOLO box 0.407（含 crack 均值）· cls 0.98585
+
+说明
+--------
+- 本目录为只读代码快照；运行训练请用原始项目（服务器
+  /home/jzf/dataset-clean/wood-multitask-final 或本地 E: 项目）。
+- 训练配置记录在同级 config.json；逐轮指标在 history.jsonl；
+  最终结果在 results.json。
+============================================================

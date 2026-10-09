@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "urudendro": {
+      "title": "UruDendro",
+      "status": "available",
+      "protocol_role": "primary ring and bridge",
+      "unit_of_independence": "tree/disc group",
+      "supervision": ["ring polygon", "pith", "crack polygon"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "urudendro2": {
+      "title": "UruDendro2",
+      "status": "available",
+      "protocol_role": "primary ring",
+      "unit_of_independence": "tree/disc group",
+      "supervision": ["ring polygon", "pith"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "urudendro4": {
+      "title": "UruDendro4",
+      "status": "available",
+      "protocol_role": "external ring test and five-fold R2",
+      "unit_of_independence": "tree",
+      "supervision": ["ring polygon", "pith"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "mokume": {
+      "title": "Mokume",
+      "status": "available",
+      "protocol_role": "primary ring and bridge",
+      "unit_of_independence": "cube; all six faces stay together",
+      "supervision": ["1 px ring raster", "knot/crack rectangle", "ignored non-target region"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "vsb": {
+      "title": "VSB-TUO reduced final set",
+      "status": "available and immutable",
+      "protocol_role": "primary defect train/validation/test",
+      "unit_of_independence": "continuous acquisition directory",
+      "supervision": ["knot/crack bbox", "knot/crack instance mask", "verified negative"],
+      "license_status": "not recorded; verify before redistribution",
+      "policy": "knot_with_crack is knot only; standalone Crack is crack; five excluded classes are ignored"
+    },
+    "vnwoodknot": {
+      "title": "VNWoodKnot",
+      "status": "available",
+      "protocol_role": "external defect test",
+      "unit_of_independence": "source image",
+      "supervision": ["knot bbox", "verified normal"],
+      "license_status": "not recorded; verify class semantics and redistribution terms"
+    },
+    "indiana": {
+      "title": "Indiana Hardwood",
+      "status": "available",
+      "protocol_role": "external ring test",
+      "unit_of_independence": "physical board; surface variants stay together",
+      "supervision": ["ring polyline", "valid/ignore region"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "oulu": {
+      "title": "OULU wood defects",
+      "status": "available",
+      "protocol_role": "external defect test",
+      "unit_of_independence": "source image",
+      "supervision": ["knot/crack bbox", "ignored non-target bbox", "verified normal"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "wvtec_wood": {
+      "title": "WVTec/MVTec AD wood",
+      "status": "available",
+      "protocol_role": "auxiliary external anomaly evaluation only",
+      "unit_of_independence": "source image",
+      "supervision": ["image anomaly label", "anomaly mask"],
+      "license_status": "CC-BY-NC-SA-4.0 as recorded by the local dataset metadata"
+    },
+    "coating": {
+      "title": "Coating defect synthetic variants",
+      "status": "available",
+      "protocol_role": "auxiliary stress test only",
+      "unit_of_independence": "335 base images; 45 derivatives stay in one group",
+      "supervision": ["unmapped auxiliary detection labels"],
+      "license_status": "not recorded; verify before redistribution"
+    },
+    "miscs_code": {
+      "title": "MiSCS/INBD repository",
+      "status": "unavailable dataset; code only",
+      "protocol_role": "excluded",
+      "unit_of_independence": "not applicable",
+      "supervision": [],
+      "license_status": "repository terms must be checked separately"
+    }
+  },
+  "excluded_derived_directories": [
+    "mokume-labelme",
+    "vsb-统计",
+    "vsb-final.build-cache",
+    "wood-multitask-final"
+  ]
+}

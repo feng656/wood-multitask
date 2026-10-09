@@ -1,0 +1,8 @@
+path: /home/jzf/dataset-clean/wood-multitask-final/outputs/defect_baseline/tile_learnability_yolo
+train: images/train
+val: images/val
+test: images/ext_test
+names:
+  0: knot
+  1: crack
+nc: 2

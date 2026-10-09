@@ -1,0 +1,45 @@
+{
+  "source": "locked extended COCO",
+  "splits": {
+    "train": {
+      "images": 10000,
+      "annotations": 19338,
+      "empty_images": 1400,
+      "skipped_images": 194,
+      "skipped_ignore_images": 0,
+      "skipped_missing_segmentation": 0
+    },
+    "val": {
+      "images": 2000,
+      "annotations": 4106,
+      "empty_images": 251,
+      "skipped_images": 59,
+      "skipped_ignore_images": 0,
+      "skipped_missing_segmentation": 0
+    },
+    "test": {
+      "images": 4000,
+      "annotations": 7030,
+      "empty_images": 605,
+      "skipped_images": 69,
+      "skipped_ignore_images": 0,
+      "skipped_missing_segmentation": 0
+    },
+    "external_test": {
+      "images": 0,
+      "annotations": 0,
+      "empty_images": 0,
+      "skipped_images": 2354,
+      "skipped_ignore_images": 0,
+      "skipped_missing_segmentation": 0
+    }
+  },
+  "classes": [
+    "knot",
+    "crack"
+  ],
+  "label_format": "box",
+  "source_datasets": [
+    "vsb"
+  ]
+}

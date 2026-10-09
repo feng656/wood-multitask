@@ -1,0 +1,47 @@
+{
+  "checkpoint": "D:\\\u6559\u52a1\u5904\u5b9e\u4e60\\wood_preproject\\outputs\\defect_baseline\\runs\\yolov8s_vsb_box-3\\weights\\best.pt",
+  "imgsz": 640,
+  "tile_size": 640,
+  "overlap": 160,
+  "domains": {
+    "tile:urudendro": {
+      "images": 15,
+      "gt_instances": {
+        "knot": 0,
+        "crack": 185
+      },
+      "knot": {
+        "predictions": 6338,
+        "mAP50_95": 0.0,
+        "AP50": 0.0,
+        "AP75": 0.0,
+        "Recall50": 0.0,
+        "Recall75": 0.0,
+        "Precision50_at_conf_floor": 0.0
+      },
+      "crack": {
+        "predictions": 8638,
+        "mAP50_95": 0.033156163232216276,
+        "AP50": 0.07145156562200493,
+        "AP75": 0.02585351968042038,
+        "Recall50": 0.4540540540540541,
+        "Recall75": 0.22162162162162163,
+        "Precision50_at_conf_floor": 0.009724473257698542
+      },
+      "gt_box_size_px": {
+        "crack": {
+          "count": 185,
+          "width_min": 9.740259740259717,
+          "width_median": 79.41176470588243,
+          "width_max": 781.4159292035396,
+          "height_min": 11.200000000000045,
+          "height_median": 90.80459770114942,
+          "height_max": 852.7272727272727,
+          "width_at_640_median": 20.194874430937663,
+          "height_at_640_median": 23.09384164222874,
+          "under_4px_after_full_resize": 10
+        }
+      }
+    }
+  }
+}
