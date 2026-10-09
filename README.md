@@ -43,8 +43,8 @@ pip install -e code/
 
 ## 未包含内容
 
-- **模型权重**：通过 [GitHub Releases](../../releases) 发布——NO Bridge v2 `best.pt`(最终多任务模型)与 Mokume 年轮基线 `unet_trained_model.pt` 见最新 Release;其余权重(旧阶段三、切片版等,共约 2.5 GB)请联系作者;
-- **数据集本体**（VSB 130 GB / Mokume 26 GB / 各切片与裁剪集）：全部路径见 `00_项目与数据/数据说明.md`。
+- **模型权重**：通过 [GitHub Releases](../../releases) 发布——NO Bridge v2 `best.pt`（最终多任务模型）与 Mokume 年轮基线 `unet_trained_model.pt` 见最新 Release；其余权重（旧阶段三、切片版等，共约 2.5 GB）未入库；
+- **数据集本体**（VSB 130 GB / Mokume 26 GB / 各切片与裁剪集）：均为公开数据集，仓库不附带，获取链接见上方「数据来源与参考文献」。
 
 ## 数据来源与参考文献
 
